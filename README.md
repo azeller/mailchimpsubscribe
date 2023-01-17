@@ -19,7 +19,7 @@ Package for subscribing users in Mailchimp lists using FormIt. Adds a snippet fo
 * **Option 2:** Set the FormIt scriptProperty &mailchimpListId to the correct Mailchimp List ID
 * Add MailChimpSubscribe to your FormIt hooks
 * Add in your chunk the placeholder fi.error.mailchimp, which holds all Mailchimp error messages.
-* Add a field called newsgroup, if the value of this field is set to yes, the user will be subscribed to the mailchimp list.
+* Add a field called newsgroup, if the value of this field is set to "1", the user will be subscribed to the mailchimp list.
 
 ## Properties
 | Property                     | Description                                                                              | Default value |
@@ -28,7 +28,7 @@ Package for subscribing users in Mailchimp lists using FormIt. Adds a snippet fo
 | mailchimpFields              | Configuration containing the field mapping between FormIt form and Mailchimp merge tags. |               |
 | mailchimpSubscribeStatus     | Able to set the subscription status (subscribed, unsubscribed, pending, cleaned), default is pending. |               |
 | mailchimpSubscribeField      | Field name to use for subscribing users to Mailchimp.                                    | newsgroup     |
-| mailchimpSubscribeFieldValue | Field value to use for subscribing users to Mailchimp.                                   | yes           |
+| mailchimpSubscribeFieldValue | Field value to use for subscribing users to Mailchimp.                                   | 1           |
 | mailchimpTags                | Comma separated tags you want the added subscriber to have. (Required mailchimpSubscribeStatus to be subscribed) |               |
 | mailchimpInterests           | Comma separated interests you want the added subscriber to have. (Required mailchimpSubscribeStatus to be subscribed) |               |
 
@@ -59,7 +59,7 @@ The example below uses the provided Mailchimp list ID from the current resources
     &submitVar=`newsletter-submit`
     &mailchimpListId=`12345678abc`
     &mailchimpFields=`name=FNAME,email=EMAIL`
-    &mailchimpSubscribeField=`newsletter`
+    &mailchimpSubscribeField=`newsletter` <-- default is newsgroup, changed it
     &mailchimpSubscribeFieldValue=`1`
 ]]
 ```
